@@ -12,7 +12,7 @@ void output(Node *);
 void delete_node(Node *&head);
 void add_front(Node *&head, float val);
 void add_tail(Node *&head, float val);
-void insert_node();
+void insert_node(Node *&head, int positon, float val);
 void deleteList(Node *&head);
 
 int main() {
@@ -35,7 +35,7 @@ int main() {
     output(head);
 
     // insert a node
-
+    
     // delete the list
     deleteList(head);
     output(head);
@@ -105,8 +105,10 @@ void add_tail(Node *&head, float val) {
     current->next = newNode;
 }
 
-void insert_node(){
-    
+void insert_node(Node *&head, int positon, float val){
+    while (head) {
+
+    }
 }
 
 void deleteList(Node *&head) {
