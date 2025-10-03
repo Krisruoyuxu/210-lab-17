@@ -106,9 +106,7 @@ void add_tail(Node *&head, float val) {
 }
 
 void insert_node(Node *&head, int positon, float val){
-    while (head) {
-
-    }
+    if (!head) return;
 }
 
 void deleteList(Node *&head) {
