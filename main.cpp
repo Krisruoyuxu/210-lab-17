@@ -8,7 +8,12 @@ struct Node {
     Node *next;
 };
 
-void output(Node *);
+void output(Node *);    
+void delete_node();
+void add_front();
+void add_tail();
+void insert_node();
+void deleteList();
 
 int main() {
     Node *head = nullptr;
