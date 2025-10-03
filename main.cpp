@@ -25,9 +25,14 @@ int main() {
         add_front(head, tmp_val); // replaced by function
     }
     output(head);
+    // add a node in the tail
+    add_tail(head,  6666);
+    cout << "After adding 9999 at tail:\n";
+    output(head);
 
     // deleting a node
-    //
+    delete_node(head);
+    output(head);
 
     // insert a node
     
@@ -49,8 +54,31 @@ void output(Node * hd) {
     cout << endl;
 }
 
-void delete_node(){
+void delete_node(Node *&head) {
+    if (!head) return;
+    cout << "Which node to delete? " << endl;
+    output(head);
+    int entry;
+    cout << "Choice --> ";
+    cin >> entry;
 
+    Node *current = head, *prev = head;
+    for (int i = 0; i < (entry-1); i++) {
+        if (i == 0) current = current->next;
+        else {
+            current = current->next;
+            prev = prev->next;
+        }
+    }
+    if (current) {
+        if (current == head) {  // delete the head
+            head = head->next;
+            delete current;
+        } else {
+            prev->next = current->next;
+            delete current;
+        }
+    }
 }
 
 void add_front(Node *&head, float val){
