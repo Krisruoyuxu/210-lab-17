@@ -35,7 +35,14 @@ int main() {
     output(head);
 
     // insert a node
-    
+    cout << "After which node to insert 10000? " << endl;
+    output(head);
+    int entry;
+    cout << "Choice --> ";
+    cin >> entry;
+    insert_node(head, entry, 10000);
+    output(head);
+
     // delete the list
     deleteList(head);
     output(head);
@@ -105,8 +112,20 @@ void add_tail(Node *&head, float val) {
     current->next = newNode;
 }
 
-void insert_node(Node *&head, int positon, float val){
+void insert_node(Node *&head, int pos, float val) {
     if (!head) return;
+    Node *current = head, *prev = head;
+    for (int i = 0; i < pos; i++) {
+        if (i == 0) current = current->next;
+        else {
+            current = current->next;
+            prev = prev->next;
+        }
+    }
+    Node *newNode = new Node;
+    newNode->value = val;
+    newNode->next = current;
+    prev->next = newNode;
 }
 
 void deleteList(Node *&head) {
